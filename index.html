@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link content="text/css" rel="stylesheet" href="style.css">
+    <title>Resume | MP-1</title>
+</head>
+
+<body>
+<header class="frame">
+    <nav class="layout">
+        <button class="menu-item" onclick="layoutMenuClick('./internal/home.html')"> Home</button>
+        <button class="menu-item" onclick="layoutMenuClick('./internal/education.html')"> Education</button>
+        <button class="menu-item" onclick="layoutMenuClick('./internal/skills.html')"> Skills</button>
+        <button class="menu-item" onclick="layoutMenuClick('./internal/projects.html')"> Projects</button>
+        <button class="menu-item" onclick="layoutMenuClick('./internal/interests.html')"> Interests</button>
+        <button class="menu-item" onclick="layoutMenuClick('./internal/contact.html')"> Contact</button>
+    </nav>
+    <div class="squeezed">
+        <button id="float-menu-caller" class="menu-item">+</button>
+        <span>Resume</span>
+        <div class="placeholder"></div>
+    </div>
+</header>
+<nav class="float-menu hidden">
+    <button class="menu-item float" onclick="floatMenuClick('./internal/home.html')"> Home</button>
+    <button class="menu-item float" onclick="floatMenuClick('./internal/education.html')"> Education</button>
+    <button class="menu-item float" onclick="floatMenuClick('./internal/skills.html')"> Skills</button>
+    <button class="menu-item float" onclick="floatMenuClick('./internal/projects.html')"> Projects</button>
+    <button class="menu-item float" onclick="floatMenuClick('./internal/interests.html')"> Interests</button>
+    <button class="menu-item float" onclick="floatMenuClick('./internal/contact.html')"> Contact</button>
+</nav>
+<main class="frame">
+    <iframe id="internal" name="internal" title="internal" src="./internal/home.html"></iframe>
+</main>
+<script>
+    document.getElementById("float-menu-caller").addEventListener("click", () => {
+        document.querySelector(".float-menu").classList.remove("hidden");
+    });
+
+    function floatMenuClick(url) {
+        document.querySelector("#internal").src = url;
+        document.querySelector(".float-menu").classList.add("hidden");
+    }
+
+    function layoutMenuClick(url) {
+        document.querySelector("#internal").src = url;
+    }
+</script>
+</body>
+</html>

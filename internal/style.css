@@ -1,0 +1,130 @@
+body {
+    background-color: transparent;
+    padding: 5mm;
+    color: white;
+}
+
+header {
+    border-bottom: 1px solid #666666;
+}
+
+h1 {
+    font-size: 6mm;
+    font-weight: bold;
+}
+
+span.subtitle {
+    color: #b4b4b4;
+    font-size: 4mm;
+}
+
+h2 {
+    font-size: 5mm;
+    font-weight: normal;
+}
+
+p {
+    text-indent: 2em;
+}
+
+div.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    width: 100%;
+    padding: 3mm;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+a:link {
+    color: #b4b4b4;
+}
+
+a:visited {
+    color: #b4b4b4;
+}
+
+audio {
+    margin: 1mm 1mm;
+}
+
+input {
+    border: 1px solid #666666;
+    border-radius: 1mm;
+    height: 6mm;
+    color: white;
+    background-color: #222222;
+}
+
+input:not(input:empty) {
+    border: 1px solid #666666;
+    border-radius: 1mm;
+    height: 6mm;
+    color: white;
+    background-color: #222222;
+}
+
+table {
+    justify-items: center;
+    align-items: center;
+}
+
+td {
+    justify-items: center;
+    align-items: center;
+}
+
+button {
+    border: 1px solid #666666;
+    border-radius: 1mm;
+    height: 6mm;
+    color: white;
+    background-color: #222222;
+    animation: button-normal 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #666666;
+    animation: button-hover 0.3s ease-in-out;
+}
+
+button:active {
+    background-color: #444444;
+}
+
+@keyframes button-normal {
+    from {
+        background-color: #666666;
+    }
+
+    to {
+        background-color: #222222;
+    }
+}
+
+@keyframes button-hover {
+    from {
+        background-color: #222222;
+    }
+
+    to {
+        background-color: #666666;
+    }
+}

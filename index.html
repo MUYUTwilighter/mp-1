@@ -18,7 +18,7 @@
         <button class="menu-item" onclick="layoutMenuClick('./internal/contact.html')"> Contact</button>
     </nav>
     <div class="squeezed">
-        <button id="float-menu-caller" class="menu-item">+</button>
+        <button id="float-menu-caller" class="menu-item" onclick="openFloatMenu()">+</button>
         <span>Resume</span>
         <div class="placeholder"></div>
     </div>
@@ -31,13 +31,17 @@
     <button class="menu-item float" onclick="floatMenuClick('./internal/interests.html')"> Interests</button>
     <button class="menu-item float" onclick="floatMenuClick('./internal/contact.html')"> Contact</button>
 </nav>
-<main class="frame">
-    <iframe id="internal" name="internal" title="internal" src="./internal/home.html"></iframe>
+<main class="frame" onclick="hideFloatMenu()">
+    <iframe id="internal" name="internal" title="internal" src="./internal/projects.html"></iframe>
 </main>
 <script>
-    document.getElementById("float-menu-caller").addEventListener("click", () => {
+    function openFloatMenu() {
         document.querySelector(".float-menu").classList.remove("hidden");
-    });
+    }
+
+    function hideFloatMenu() {
+        document.querySelector(".float-menu").classList.add("hidden");
+    }
 
     function floatMenuClick(url) {
         document.querySelector("#internal").src = url;
@@ -48,5 +52,12 @@
         document.querySelector("#internal").src = url;
     }
 </script>
+<footer>
+    <nav>
+        <a href="https://github.com/MUYUTwilighter" target="_blank">GitHub</a> |
+        <a href="https://space.bilibili.com/291040380" target="_blank">bilibili.com</a> |
+        <a href="https://center.mcmod.cn/67935/" target="_blank">mcmod.cn</a>
+    </nav>
+</footer>
 </body>
 </html>

@@ -2,9 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <link content="text/css" rel="stylesheet" href="style.css">
     <title>Projects | MP-1</title>
 </head>
 <body>
+<h1>Projects</h1>
+<hr>
+<h2>Mature Projects</h2>
+<ul>
+    <li>
+        <a href="https://www.curseforge.com/minecraft/mc-mods/saplanting">Saplanting</a>, my first minecraft mod work,
+        which is also the hottest
+    </li>
+    <li>
+        <a href="https://www.curseforge.com/minecraft/mc-mods/croparia-if">Croparia IF</a>, my most recently developed
+        and published Minecraft mod, used to be a forked project, but was completely overwritten in Jan. 2024. This mod
+        is the second interesting mod I have developed, as they bring a lot of new features to Minecraft.
+    </li>
+    <li>
+        <a href="https://github.com/MUYUTwilighter/graime">Graime</a>, a cross-platform low-grain input method for
+        Chinese characters. It can serve better ranking of Chinese words with the same pinyin by using a time-sensitive
+        dictionary.
+    </li>
+</ul>
+<h2>Under Construction</h2>
+<ul>
+    <li>
+        <a href="https://github.com/MUYUTwilighter/Croparia-IF-Dynamics">Croparia IF: Dynamics</a>, an add-on mod for
+        Croparia IF, which I believe will become my most interesting mod. It adds a wireless transporting system for
+        items & fluid (the API can actually serve all kinds of transportation), where the Elenet Nodes (you can view
+        them as Access Points) can form a mesh-like network, Elenet, automatically.
+    </li>
+</ul>
+<h2>JS Calculator</h2>
+<table>
+    <tr>
+        <td><label for="input-a"></label><input type="text" id="input-a" value="" placeholder="First number"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>|-</td>
+        <td>
+            <button onclick="calc(sum)" id="add-button">+</button>
+            <button onclick="calc(subtract)" id="subtract-button">-</button>
+            <button onclick="calc(multiply)" id="multiply-button">*</button>
+            <button onclick="calc(divide)" id="divide-button">/</button>
+            <button onclick="calc(power)" id="power-button">^</button>
+            <button onclick="performClear()" id="clear-button">C</button>
+        </td>
+        <td>=</td>
+        <td>
+            <p id="result">result...</p>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="input-b"></label><input type="text" id="input-b" value="" placeholder="Second number"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<script>
+    const numberA = document.querySelector("#input-a");
+    const numberB = document.querySelector("#input-b");
+    const result = document.querySelector("#result");
 
+    function sum(a, b) {
+        return a + b;
+    }
+
+    function subtract(a, b) {
+        return a - b;
+    }
+
+    function multiply(a, b) {
+        return a * b;
+    }
+
+    function divide(a, b) {
+        return b === 0 ? "Cannot divide by 0" : a / b;
+    }
+
+    function power(a, b) {
+        if (a === 0 && b < 0) return "Cannot calculate 0^(-n)";
+        if (b === 0) return 1;
+        for (let i = 0; i < b; i++) {
+            a = a * a;
+        }
+        return a;
+    }
+
+    function performClear() {
+        numberA.value = "";
+        numberB.value = "";
+        result.textContent = "result...";
+    }
+
+    function calc(operation) {
+        let a = numberA.value;
+        let b = numberB.value;
+        if (a.length === 0 || b.length === 0 || isNaN(a) || isNaN(b)) {
+            result.textContent = "Invalid Input";
+            return;
+        }
+        a = Number(a);
+        b = Number(b);
+        result.textContent = operation(a, b);
+    }
+</script>
 </body>
 </html>
